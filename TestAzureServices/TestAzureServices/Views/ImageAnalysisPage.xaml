@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestAzureServices.Views.ImageAnalysisPage"
+             xmlns:customcontrols="clr-namespace:TestAzureServices.Views.CustomControls">
+    
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Image x:Name="CapturedImage" Source="placeholder.png"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand" Aspect="AspectFit" />
+            
+            <Label x:Name="AnalyzedLabel" LineBreakMode="TailTruncation"
+                   Text="Wait..." BackgroundColor="Green"                   
+                   HorizontalOptions="FillAndExpand" />
+            
+            <Button x:Name="CapturePhoto" Text="Capture Photo"
+                    HorizontalOptions="FillAndExpand"                    
+                    Command="{Binding CaptureImageCommand}" />
+            
+            <Button x:Name="AnalyzePhoto" Text="Analyze Photo"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding CanUpload}"
+                    Command="{Binding AnalyzeImageCommand}" />
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--<StackLayout BackgroundColor="Gray" HorizontalOptions="Fill" HeightRequest="64">                                 
+        <customcontrols:CircleImageView Source="logout.png"
+                                        WidthRequest="44"
+                                        HeightRequest="44"
+                                        HorizontalOptions="End" />
+            
+        </StackLayout>-->
